@@ -17,11 +17,10 @@ COPY --from=node /usr/local/bin /usr/local/bin
 
 RUN npm install -g @cyclonedx/cdxgen
 
-ENV sbt_version 1.3.9
+ENV sbt_version 1.4.5
 ENV sbt_home /usr/local/sbt
 ENV PATH ${PATH}:${sbt_home}/bin
 
 # Install sbt
 RUN mkdir -p "$sbt_home/bin"
-RUN curl -L "https://github.com/sbt/sbt/releases/download/v1.3.9/sbt-1.3.9.tgz" | tar xz -C /usr/local 
-RUN sbt exit
+RUN curl -L "https://github.com/sbt/sbt/releases/download/v1.4.5/sbt-1.4.5.tgz" | tar xz -C /usr/local 
